@@ -27,16 +27,21 @@ class MainActivity : ComponentActivity() {
         val textViewFecha = findViewById<TextView>(R.id.fecha_y_hora) // Asegúrate de que coincida con el ID de tu TextView en tu layout XML
         textViewFecha.text = fechaFormateada
 
+
         //otros elementos
         val cajaTexto: EditText = findViewById(R.id.cajaTexto)
         val caracteres: TextView = findViewById(R.id.caracteres)
         val guess: TextView = findViewById(R.id.guess)
+        guess.alpha = 0.18F
         val botonVisibilidad: ToggleButton = findViewById(R.id.cuadrado)
+        botonVisibilidad.isChecked = true
         botonVisibilidad.setOnClickListener{
             if(botonVisibilidad.isChecked){
                 botonVisibilidad.alpha = 0F
+                guess.alpha = 0F
             }else{
                 botonVisibilidad.alpha = 1F
+                guess.alpha = 0.18F
             }
         }
 
