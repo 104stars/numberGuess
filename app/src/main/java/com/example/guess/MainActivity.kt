@@ -13,6 +13,7 @@ import java.util.*
 import android.view.View
 import androidx.compose.ui.graphics.Color
 import androidx.core.content.ContextCompat
+import kotlin.math.abs
 
 
 class MainActivity : ComponentActivity() {
@@ -38,12 +39,13 @@ class MainActivity : ComponentActivity() {
         botonVisibilidad.setOnClickListener{
             if(botonVisibilidad.isChecked){
                 botonVisibilidad.alpha = 0F
-                guess.alpha = 0F
+                guess.alpha = 0.18F
             }else{
                 botonVisibilidad.alpha = 1F
-                guess.alpha = 0.18F
+                guess.alpha = 0F
             }
         }
+
 
 
 
@@ -72,18 +74,22 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 }
+                //algoritmo adivinacion
                 val resultado = sumaResultado // Tomar el valor de la suma
-
                 val proximoMultiploDeNueve = (resultado + 8) / 9 * 9
+                val diferencia = abs(resultado - proximoMultiploDeNueve)
 
-                val diferencia = Math.abs(resultado - proximoMultiploDeNueve)
+                //muestra numero pensado
+                guess.text = "$diferencia"
 
-                if(sumaResultado==0){
+                //muestra de conteo de caracteres
+                if(cajaTexto.length()==0){
+                    guess.text = ""
+                }else if(cajaTexto.length()==1){
+                    caracteres.text = "1 caracter"
                 }else{
-                    guess.text = "$diferencia"
+                    caracteres.text = "$cantidadCaracteres caracteres"
                 }
-
-                caracteres.text = "$cantidadCaracteres caracteres"
             }
 
             override fun afterTextChanged(s: Editable?) {
