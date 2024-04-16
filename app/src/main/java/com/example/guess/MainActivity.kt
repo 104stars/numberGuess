@@ -31,6 +31,7 @@ class MainActivity : ComponentActivity() {
 
         //otros elementos
         val cajaTexto: EditText = findViewById(R.id.cajaTexto)
+        cajaTexto.setHintTextColor(ContextCompat.getColor(this, R.color.guessColor))
         val caracteres: TextView = findViewById(R.id.caracteres)
         val guess: TextView = findViewById(R.id.guess)
         guess.alpha = 0.18F
@@ -85,7 +86,7 @@ class MainActivity : ComponentActivity() {
                 //muestra de conteo de caracteres
                 if(cajaTexto.length()==0){
                     guess.text = ""
-                }else if(cajaTexto.length()==1){
+                }else if(cantidadCaracteres == 1){
                     caracteres.text = "1 caracter"
                 }else{
                     caracteres.text = "$cantidadCaracteres caracteres"
