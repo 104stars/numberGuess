@@ -8,10 +8,8 @@
     android:orientation="vertical">
 
 
-
-
-
     <ImageView
+        android:id="@+id/barraArriba"
         android:layout_width="1080px"
         android:layout_height="189px"
         android:src="@drawable/topbar"
@@ -22,19 +20,19 @@
         app:layout_constraintVertical_bias="0.024" />
 
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="218dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="218dp" />
 
 
     <TextView
@@ -44,7 +42,7 @@
         android:alpha="0.5"
         android:text="0 caracteres"
         android:textColor="@color/lightGray"
-        android:textSize="15dp"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
@@ -59,7 +57,7 @@
         android:alpha="0.5"
         android:text="|"
         android:textColor="@color/lightGray"
-        android:textSize="15dp"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.023"
@@ -75,7 +73,7 @@
         android:tag="fechahora"
         android:text="fecha y hora"
         android:textColor="@color/lightGray"
-        android:textSize="15dp"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,40 +83,45 @@
 
     <EditText
         android:id="@+id/cajaTexto"
-        android:layout_width="297dp"
-        android:layout_height="386dp"
+        android:layout_width="286dp"
+        android:layout_height="564dp"
         android:background="@null"
         android:gravity="top"
         android:hint="Empiece a escribir"
-        android:textColor="@color/white"
-        android:textColorHint="@color/guessColor"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHighlight="@color/custom3"
+        android:focusedSearchResultHighlightColor="@color/custom2"
+        android:textCursorDrawable="@drawable/cursor"
+        android:textColorHint="@color/custom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        android:theme="@style/TextViewWithRedHandlers"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.76" />
 
     <ToggleButton
-            android:id="@+id/cuadrado"
-            android:layout_width="131dp"
-            android:layout_height="484dp"
-            android:alpha="0"
-            android:background="@color/black"
-            android:textOff=""
-            android:textOn=""
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+        android:id="@+id/cuadrado"
+        android:layout_width="131dp"
+        android:layout_height="484dp"
+        android:alpha="0"
+        android:background="@color/black"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/guess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha="0.75"
+        android:alpha="0.18"
         android:text=""
         android:textColor="#292929"
         android:textSize="13dp"
@@ -130,7 +133,6 @@
         app:layout_constraintVertical_bias="0.025" />
 
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
@@ -138,6 +140,12 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="25dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="128dp" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
